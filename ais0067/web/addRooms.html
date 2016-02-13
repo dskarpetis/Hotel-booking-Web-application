@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Hotel Anesis</title>
+        
+    <script>
+    function validateForm()
+    {
+        var a = document.getElementById("room")
+        if(a.value == null || a.value == "") {
+        alert("Δεν διαλέξατε κάποιο δωμάτιο");   
+        return false;
+        }              
+        var b = document.forms["myForm"]["arrival"].value;
+        if (b == null || b == "") {
+        alert("Δεν δώσατε τιμή για πεδίο ημερομηνια αφιξης");
+        return false;
+        }       
+        var c = document.forms["myForm"]["departure"].value;
+        if (c == null || c == "") {
+        alert("Δεν δώσατε τιμή για πεδίο ημερομηνια αναχώρησης");
+        return false;
+        }        
+        var d = document.forms["myForm"]["total"].value;
+        if (d == null || d == "") {
+        alert("Δεν δώσατε τιμή για πεδίο σύνολο ατόμων");
+        return false;
+        }               
+        var e = document.forms["myForm"]["name"].value;
+        if ( e== null || e == "") {
+        alert("Δεν δώσατε τιμή για πεδίο όνομα");
+        return false;
+        }
+        var f = document.forms["myForm"]["phone"].value;
+        if (f == null || f == "") {
+        alert("Δεν δώσατε τιμή για πεδίο τηλέφωνο");
+        return false; 
+        }
+    }
+</script> 
+	<style>
+	div.a 
+	{
+    opacity: 0.6;
+	font-size:70%	
+	}   
+	</style>
+
+    </head>
+    <body>
+	
+        <div style="background-color:#D2D2D2; border-radius: 20px; box-shadow: 10px 10px 5px #797D92; padding: 5px 5px 20px 5px; width: 350px; margin-left: auto; margin-right: auto; text-align: left; ">
+        <h1 style="color: blue; font-family:Comic Sans MS; text-shadow: 2px 2px 2px #888888;" > <center>Hotel Anesis</center></h1>
+			
+	<form name="myForm" action="addRooms" method="post" onsubmit="return validateForm()">               
+            <table style="width:100%">
+                <td>Δωμάτιο</td>
+                
+                <td>
+                <select name="room" id="room" >
+                <span id="cty">
+                <option value=""></option>    
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+                <option value="K4">K4</option>
+                <option value="K5">K5</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+                <option value="A5">A5</option>
+                </td>                        
+                </span>
+                </select> <br>				
+ 						
+		<tr>
+                <td>Άφιξη</td>
+                <td><input type="date" name="arrival" value="" placeholder="YYYY/MM/DD" style="width: 175px;"/></td>
+		</tr>
+						
+		<tr>
+                <td>Αναχώρηση</td>
+                <td><input type="date" name="departure" value="" placeholder="YYYY/MM/DD" style="width: 175px;"/></td>
+		</tr>
+						
+		<tr>
+                <td>Πλήθος ατόμων</td>
+                <td><input type="number" min="1" max="5" name="total" value="" style="width: 175px;" /></td>
+		</tr>
+						
+		<tr>
+                <td>Όνομα Επικοινωνίας</td>
+                <td><input type="text" name="name" value="" style="width: 175px;" /><br></td>
+		</tr>
+					
+		<tr>
+                <td>Τηλέφωνο</td>
+                <td><input type="text" name="phone" value="" maxlength="10" style="width: 175px;" /></td>
+		</tr>
+                </table> <br>	         
+            <center>     
+            <button name="submit" style="width:90px;height:30px; box-shadow: 3px 3px 3px #888888;" type="submit" value="">Αποθήκευση</button> 
+            <button name="reset"  style="width:90px;height:30px; box-shadow: 3px 3px 3px #888888;" type="reset" value="">Καθαρισμός</button>
+            <input type=button style="width:90px;height:30px; box-shadow: 3px 3px 3px #888888;" onClick="parent.location='index.html'" value='Επιστροφή'>
+            </center>
+	
+            <div class="a">
+                <br>*Η ημερομηνία είναι υποχρεωτικα της μορφης YYYY/MM/DD<br> 
+                     &nbsp; ή YYYY-MM-DD σε όλους τους browsers εκτός από Chrome
+            <div>        
+        
+        </form>
+        </div>	
+    </body>
+</html>
+
